@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/geggleto/circuit-breaker-js.svg?branch=master)](https://travis-ci.org/geggleto/circuit-breaker-js)
+
 # circuit-breaker-js
 
 This package implements the Circuit Breaker pattern. Circuit breakers are useful for stopping and raising events/notifications about system problems. In complex distrubuted applications it is hard to gracefully handle remote dependent failures. 
