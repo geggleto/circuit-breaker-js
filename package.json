@@ -4,7 +4,7 @@
   "description": "Implementation of the Circuit Breaker pattern",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/geggleto/circuit-breaker-js/issues"
   },
-  "homepage": "https://github.com/geggleto/circuit-breaker-js#readme"
+  "homepage": "https://github.com/geggleto/circuit-breaker-js#readme",
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  }
 }
