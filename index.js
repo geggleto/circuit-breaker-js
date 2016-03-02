@@ -64,7 +64,7 @@ breaker.setState = function (service, state) {
  */
 breaker.getRetry = function (service) {
     return this._retryThreshold[service];
-}
+};
 /**
  *
  * @param service
@@ -104,7 +104,7 @@ breaker.registerHandler = function (service, cb) {
  */
 breaker.getFailureCount = function (service) {
     return this._failureCounter[service];
-}
+};
 
 /**
  *
@@ -113,7 +113,7 @@ breaker.getFailureCount = function (service) {
  */
 breaker.getFailureThreshold = function (service) {
     return this._failureThreshold[service];
-}
+};
 
 /**
  *
@@ -148,12 +148,18 @@ breaker.try = function (service, code) {
                     }, obj.getRetry(service));
                 })(this);
             }
+
+            return false;
         } else {
             //Yay
             this.setState(service, "CLOSED");
             this._failureCounter[service] = 0;
+            return true;
         }
+    } else {
+        return false;
     }
+
 };
 
 

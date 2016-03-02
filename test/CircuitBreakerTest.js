@@ -70,6 +70,14 @@ describe('Circuit Breaker', function() {
             breaker.try("test", successBlock);
         });
 
+        it('it should return true', function() {
+            assert.equal(true, breaker.try("test", successBlock));
+        });
+
+        it('it should return false', function() {
+            assert.equal(false, breaker.try("test", failBlock));
+        });
+
         it('should be available and failureCount should be 1', function() {
             breaker.try("test", failBlock);
             assert.equal(true, breaker.isAvailable("test"));
