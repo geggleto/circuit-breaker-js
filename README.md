@@ -21,14 +21,15 @@ Each service has 5 properties.
   try will return a boolean value representing the success or failure of the callback.
   
   When the Failure Threshold is hit, the following will happen.
-    - The breaker will go from CLOSED ==> OPEN
-    - If a handler is present, it will be excuted.
-    - A timer basd on Retry Threshold will be executed
-      - This will set the breaker from OPEN to RETRY
-      - The fail count remains at maximum. The system will now execute one more request through the breaker
-      - Upon success the failcount will return to 0 and the state will be RETRY ==> CLOSED
-      - If the next request fails, then the process will repeat until it is successful.
-      - ***PLEASE NOTE THAT THE TRIPPED HANDLER WILL BE EXECUTED EACH TIME THE BREAKER IS RESET TO "RETRY"***
+  
+- The breaker will go from CLOSED ==> OPEN
+- If a handler is present, it will be excuted.
+- A timer basd on Retry Threshold will be executed
+    - This will set the breaker from OPEN to RETRY
+    - The fail count remains at maximum. The system will now execute one more request through the breaker
+    - Upon success the failcount will return to 0 and the state will be RETRY ==> CLOSED
+    - If the next request fails, then the process will repeat until it is successful.
+    - ***PLEASE NOTE THAT THE TRIPPED HANDLER WILL BE EXECUTED EACH TIME THE BREAKER IS RESET TO "RETRY"***
 
 
 # Example Breaker Usage
