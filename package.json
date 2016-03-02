@@ -1,5 +1,5 @@
 {
-  "name": "circuit-breaker-js",
+  "name": "geggleto-circuit-breaker",
   "version": "1.0.0",
   "description": "Implementation of the Circuit Breaker pattern",
   "main": "index.js",
